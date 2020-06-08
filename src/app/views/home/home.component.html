@@ -1,18 +1,18 @@
 <h1>Formulário de Cadastro</h1>
-<form>
+<form method="POST" #frm="ngForm" (ngSubmit)="cadastrar(frm)">
   <div>
-    <h2>Nome</h2>
-    <input type="text" name="name" />
+    <label for="name">Nome</label>
+    <input type="text" name="name" [(ngModel)]="contato.name" required />
   </div>
   <div>
-    <h2>Telefone</h2>
-    <input type="text" name="phone" />
+    <label for="phone">Telefone</label>
+    <input type="text" name="phone" [(ngModel)]="contato.phone" required />
   </div>
   <div>
-    <h2>Idade</h2>
-    <input type="number" name="age" />
+    <label for="age">Idade</label>
+    <input type="number" name="age" [(ngModel)]="contato.age" required />
   </div>
   <div>
-    <button type="submit">Cadastrar</button>
+    <button type="submit" [disabled]="frm.invalid">Cadastrar</button>
   </div>
 </form>
