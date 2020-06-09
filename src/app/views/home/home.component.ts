@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ContatoService } from '../../service/contato.service';
-import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { Contact } from '../../model/contact.model';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +10,22 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  contato: any;
+  contato: Contact;
 
-  constructor(private service: ContatoService) {}
+  constructor(private service: ContatoService, private route: Router) {}
 
   ngOnInit(): void {
-    this.contato = {};
+    this.contato = {
+      name: '',
+      phone: null,
+      age: null,
+    };
   }
 
   cadastrar(frm) {
     this.service.cadastrar(this.contato).subscribe((resp) => {
-      console.log('Success!');
       frm.reset();
+      this.route.navigateByUrl('/');
     });
   }
 }

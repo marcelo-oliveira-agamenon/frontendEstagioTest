@@ -6,21 +6,33 @@
 
 <div class="form">
   <form method="POST" #frm="ngForm" (ngSubmit)="cadastrar(frm)">
-    <div>
-      <label for="name">Nome</label>
+    <div class="inputName">
+      <label for="name" style="margin-right: 15px;">Nome</label>
       <input type="text" name="name" [(ngModel)]="contato.name" required />
     </div>
-    <div>
-      <label for="phone">Telefone</label>
+    <div class="inputPhone">
+      <label for="phone" style="margin-right: 15px;">Telefone</label>
       <input type="text" name="phone" [(ngModel)]="contato.phone" required />
     </div>
-    <div>
-      <label for="age">Idade</label>
-      <input type="number" name="age" [(ngModel)]="contato.age" required />
+    <div class="inputAge">
+      <label for="age" style="margin-right: 15px;">Idade</label>
+      <input
+        type="number"
+        name="age"
+        [(ngModel)]="contato.age"
+        required
+        maxlength="3"
+      />
     </div>
-    <div>
-      <button type="submit" [disabled]="frm.invalid">Cadastrar</button>
+    <div class="btnForm">
+      <button
+        type="submit"
+        [disabled]="frm.invalid"
+        style="padding: 8px 8px; margin-right: 55px;"
+      >
+        Cadastrar
+      </button>
+      <button routerLink="/" style="padding: 8px 8px;">Cancelar</button>
     </div>
-    <button routerLink="/">Voltar</button>
   </form>
 </div>

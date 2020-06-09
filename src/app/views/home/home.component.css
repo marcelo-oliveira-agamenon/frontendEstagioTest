@@ -4,6 +4,22 @@
 
 .form {
   margin-top: 50px;
-  display: flex;
-  flex-direction: column;
+}
+
+.inputName {
+  padding: 25px 25px;
+}
+
+.inputPhone {
+  padding: 25px 25px;
+}
+
+.inputAge {
+  padding: 25px 25px;
+  margin-bottom: 50px;
+}
+
+.btnForm {
+  display: inline;
+  margin-left: 55px;
 }
