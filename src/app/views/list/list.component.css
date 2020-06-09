@@ -1,0 +1,20 @@
+table {
+  width: 100%;
+}
+
+.toolbar {
+  height: 80px;
+}
+
+.title {
+  flex: 1 1 auto;
+  font-size: 25px;
+}
+
+.btnCadas {
+  padding: 0 14px;
+}
+
+.table {
+  margin-top: 55px;
+}

@@ -8,10 +8,12 @@ import { ContatoService } from 'src/app/service/contato.service';
 })
 export class ListComponent implements OnInit {
   listaContatos: Array<any>;
+  listaHeaders: Array<String>;
 
   constructor(private service: ContatoService) {}
 
   ngOnInit(): void {
+    this.listaHeaders = ['name', 'phone', 'age'];
     this.listar();
   }
 
